@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+      POSTGRES_DB: rocket_task_list
+    ports:
+      - "5432:5432"
